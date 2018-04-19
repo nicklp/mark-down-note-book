@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>mark down note book</title>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+		<link rel="stylesheet" href="css/style.css" />
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script src="https://unpkg.com/marked"></script>
+	</head>
+	<body>
+		<div id="notebook">
+			<section class="main">
+				<textarea v-model="contents"></textarea>
+			</section>
+			<aside class="preview" v-html="notePreView"></aside>
+		</div>
+		
+		<script type="text/javascript" src="js/scripts.js" ></script>
+	</body>
+</html>
