@@ -42,7 +42,7 @@ new Vue({
 });
 
 /*
- 	Vue的生命周期钩子函数  (LifeCycle hooks)
+ 	----Vue的生命周期钩子函数  (LifeCycle hooks)----
  	beforeCreate:完成Vue的实例，但是还没有做任何处理     new Vue({});
  	created:Vue实例准备就绪，并且填充了属性，但是此时的Vue并没有加载到DOM中
  	beforeMount:Vue实例挂载到页面前触发
