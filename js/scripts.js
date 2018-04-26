@@ -8,6 +8,7 @@ new Vue({
 	},
 	computed:{
 		notePreView(){
+			//marked() 是一款插件，使用特定的符号实现html标签才能够实现的功能（超链接，文本加粗，字体倾斜，表格等）
 			return marked(this.contents);
 		},
 		addButtonTitle(){
