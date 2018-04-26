@@ -11,7 +11,17 @@
 	<body>
 		<div id="notebook">
 			<aside class="side-bar">
-				
+				<div class="toolbar">
+					<button v-on:click="addNote" v-bind:title="addButtonTitle">
+						<i class="material-icons">add</i> Add note
+					</button>
+				</div>
+				<div class="notes" >
+					<!--Note list here-->
+					<div class="note" v-for="note of notes">
+						{{note.title}}
+					</div>
+				</div>
 			</aside>
 			<section class="main">
 				<textarea v-model="contents"></textarea>

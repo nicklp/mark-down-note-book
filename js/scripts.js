@@ -2,12 +2,16 @@ new Vue({
 	el:"#notebook",
 	data(){
 		return{
-			contents:'**This is a note.**'
+			contents:'**This is a note.**',
+			notes:[]
 		}
 	},
 	computed:{
 		notePreView(){
 			return marked(this.contents);
+		},
+		addButtonTitle(){
+			return this.notes.length + 'note(s) already';
 		}
 	},
 	watch:{
@@ -33,6 +37,18 @@ new Vue({
 		saveNote(){
 			//this.content为data中的content，因为conten的值由v-model实时绑定到html标签的
 			localStorage.setItem('content',this.contents);//将修改的值存放（覆盖）到content中
+		},
+		addNote(){
+			const time = Date.now();
+			//Default new note
+			const note = {
+				id:String(time),
+				title:'New note' + (this.notes.length + 1),
+				content:'**Hi!** This notebook is using [markdown](#) for formatting! ',
+				created:time,
+				favorite:false
+			}
+			this.notes.push(note);//将初始化的对象添加到对象数组中
 		}
 	},
 	created(){
